@@ -11,11 +11,11 @@ class PortfolioModel:
         self.cursor.execute('''
             CREATE TABLE IF NOT EXISTS investments (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,  -- מזהה ייחודי לכל נייר ערך
-                name TEXT UNIQUE,  -- שם המניה/אג"ח (חייב להיות ייחודי)
-                price REAL,  -- מחיר הנייר ערך
-                industry TEXT,  -- הענף אליו שייך נייר הערך
+                name TEXT UNIQUE,  -- שם המניה/אג"ח 
+                price REAL,  -- מחיר המניה
+                industry TEXT,  -- הענף אליו שייך המניה או אג״ח
                 variance TEXT,  -- רמת השינויים במחיר
-                security_type TEXT  -- סוג הנייר (מניה/אג"ח)
+                security_type TEXT  -- סוג השירות (מניה/אג"ח)
             )
         ''')
         self.conn.commit()  # שמירת השינויים במסד הנתונים
