@@ -2,7 +2,7 @@ import requests  # ייבוא ספריית בקשות HTTP
 
 class AI_Agent:
     def __init__(self):
-        """אתחול מחלקה לחיבור ל-AI"""
+        print("""אתחול מחלקה לחיבור ל-AI""")
         self.ollama_api_url = "http://localhost:11434/api/generate"  # כתובת השרת המקומי
 
     def get_advice(self, security):

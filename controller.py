@@ -1,11 +1,11 @@
 import sqlite3
 from dbmodel import PortfolioModel
-from ollamamodel import OllamaModel
+from ollamamodel import AI_Agent
 
 class PortfolioController:
     def __init__(self, model):
         self.model = model
-        self.ollama_model = OllamaModel()
+        self.ollama_model = AI_Agent()
 
     def buy_security(self, security):
         """רכישת נייר ערך והוספתו למסד הנתונים"""

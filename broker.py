@@ -13,4 +13,4 @@ class Broker:
         if "Global Quote" in data and "05. price" in data["Global Quote"]:
             return float(data["Global Quote"]["05. price"])  # החזרת המחיר המעודכן
         
-        raise ValueError("לא ניתן לעדכן מחיר המניה - בדוק את הסימבול או את החיבור ל-API.")
+        raise ValueError("לא ניתן לעדכן מחיר המניה - בדוק את הסימול או את החיבור ל-API.")
