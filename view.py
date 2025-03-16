@@ -22,7 +22,7 @@ class PortfolioView:
         self.create_widgets()
     
     def create_widgets(self):
-        """ יצירת כפתורים ושדות קלט לממשק """
+        """ יצירת כפתורים וקלט לממשק """
         tk.Label(self.root, text="שם נייר ערך:").pack()
         self.symbol_entry = tk.Entry(self.root)
         self.symbol_entry.pack()
@@ -44,7 +44,7 @@ class PortfolioView:
         amount = self.amount_entry.get().strip()
         
         if not symbol or not amount.isdigit():
-            messagebox.showerror("שגיאה", "הזן שם נייר וכמות מספרית.")
+            messagebox.showerror("שגיאה", "הזן שם מניה וכמות .")
             return
         
         amount = int(amount)
@@ -54,12 +54,12 @@ class PortfolioView:
         self.display_portfolio()
     
     def sell_stock(self):
-        """ מכירת נייר ערך והפחתתו מהתיק """
+        """ מכירת נייר ערך והוצאתו מהתיק """
         symbol = self.symbol_entry.get().strip()
         amount = self.amount_entry.get().strip()
         
         if not symbol or not amount.isdigit():
-            messagebox.showerror("שגיאה", "הזן שם נייר וכמות מספרית.")
+            messagebox.showerror("שגיאה", "הזן שם מניה וכמות.")
             return
         
         amount = int(amount)
@@ -71,7 +71,7 @@ class PortfolioView:
         """ קבלת מחיר מניה ממקור חיצוני (Alpha Vantage) """
         symbol = self.symbol_entry.get().strip()
         if not symbol:
-            messagebox.showerror("שגיאה", "הזן שם נייר ערך.")
+            messagebox.showerror("שגיאה", "הזן שם מניה וכמות.")
             return
         
         api_key = "87RYKHP1CUPBGWY1"
