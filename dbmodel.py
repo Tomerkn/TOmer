@@ -13,6 +13,7 @@ class PortfolioModel:
                 id INTEGER PRIMARY KEY AUTOINCREMENT,  -- מזהה ייחודי לכל נייר ערך
                 name TEXT UNIQUE,  -- שם המניה/אג"ח 
                 price REAL,  -- מחיר המניה
+                amount REAL,  -- כמות המניה
                 industry TEXT,  -- הענף אליו שייך המניה או אג״ח
                 variance TEXT,  -- רמת השינויים במחיר
                 security_type TEXT  -- סוג השירות (מניה/אג"ח)

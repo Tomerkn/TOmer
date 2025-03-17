@@ -1,15 +1,12 @@
 import requests  # ייבוא ספריית בקשות HTTP
+import ollama
 
 class AI_Agent:
     def __init__(self):
         print("""אתחול מחלקה לחיבור ל-AI""")
         self.ollama_api_url = "http://localhost:11434/api/generate"  # כתובת השרת המקומי
 
-    def get_advice(self, security):
-        """שליחת בקשה ל-AI לקבלת המלצה"""
-        data = {"prompt": f"האם כדאי להשקיע ב {security.name}?", "model": "finance-gpt"}
-        try:
-            response = requests.post(self.ollama_api_url, json=data, timeout=5)
-            return response.json().get("response", "לא התקבלה תשובה מה-AI")
-        except Exception as e:
-            return f"שגיאה בהתחברות ל-Ollama: {e}"
+    def get_advice(self, symbol):
+    
+        response = ollama.generate(model='llama3', prompt=f"האם כדאי להשקיע ב {symbol}? use only 250 chars in your answer")
+        return response['response']

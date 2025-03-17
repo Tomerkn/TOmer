@@ -1,11 +1,12 @@
 # הגדרה נכונה של מחלקות ניירות ערך
 class Security:
-    def __init__(self, name="Unknown"):
+    def __init__(self, name="Unknown", amount=0):
         self.name = name
+        self.amount = amount
 
 class Stock(Security):
-    def __init__(self, name="Unknown"):
-        super().__init__(name)
+    def __init__(self,name="Unknown", amount=0):
+        super().__init__(name,amount)
 
 class Bond(Security):
     def __init__(self, name="Unknown"):
