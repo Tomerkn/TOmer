@@ -1,5 +1,5 @@
-sqlite3
-requests
-tkinter
-pyinstaller
-ollama
+sqlite3 # מסד הנתונים
+requests # תמיכה ב443 
+tkinter # ממשק גרפי
+pyinstaller # מאפשרת קימפול קוד לקובץ exe
+ollama # מודל בינה מלאכותית

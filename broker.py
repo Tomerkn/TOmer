@@ -7,13 +7,13 @@ API_KEY = '451FPPPSEOOZIDV4'  # API KEY 2 למטרת בדיקות עקב הגב�
 
 class Broker:
     @staticmethod
-    def update_price(symbol):
+    def update_price(symbol):# שליפת מחיר מנייה בזמן אמת מ API
         """שליפת מחיר מניה בזמן אמת מ-Alpha Vantage"""
         url = f"https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol={symbol}&apikey={API_KEY}"
         response = requests.get(url)
         data = response.json()
-        print(data)
-        if "Global Quote" in data and "05. price" in data["Global Quote"]:
+        print(data) # הדפסת פלט שקיבלנו לטובת בדיקות
+        if "Global Quote" in data and "05. price" in data["Global Quote"]:# בדיקת המידע שקיבלנו האם מכיל מחיר
             return float(data["Global Quote"]["05. price"])  # החזרת המחיר המעודכן
-        
+        # אם אין מחיר זרוק שגיאה
         raise ValueError("לא ניתן לעדכן מחיר המניה - בדוק את הסימול או את החיבור ל-API.")
